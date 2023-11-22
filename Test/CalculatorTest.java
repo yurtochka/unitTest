@@ -3,6 +3,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 import seminars.first.model.Calculator;
+import seminars.second.model.Diametr;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -93,5 +94,14 @@ public class CalculatorTest {
                 .describedAs("Input error");
         System.setIn(inputStream);
         System.setOut(null);
+    }
+
+    @Test
+    void computeLengthCircleDia() {
+        Diametr diametr = new Diametr();
+
+        double res = diametr.lengthCircle(30);
+
+        assertThat(res).isEqualTo(94.24777960769379);
     }
 }
